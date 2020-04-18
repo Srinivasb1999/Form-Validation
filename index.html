@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Form Validation</title>
+		<script>
+			function validate()
+			{
+				var name = document.getElementById('name').value;
+				var password = document.getElementById('password').value;
+				var password2 = document.getElementById('password2').value;
+				var age = document.getElementById('age').value;
+				var num = document.getElementById('num').value;
+				var year = document.getElementById('year').value;
+				var add = document.getElementById('add').value;
+				var email = document.getElementById('email').value;
+
+				/*
+				if(name.trim()==""||name==null)
+				{
+					alert('Username Field is Empty!');
+					return false;
+				}
+				else if(name.length<3||name.length>10)	
+				{
+					alert('Username: Minimum 3 Characters, Maximum 10 characters');
+					return false;
+				}
+				else if(age<20||age>80)
+				{
+					alert('Enter Age within 20 to 80 years');
+					return false;
+				}
+				else if(isNaN(age))
+				{
+					alert('Age: Enter Numeric Value');
+					return false;
+				}
+				else if(age.trim()==""||age==null)
+				{
+					alert('Age: Field is Empty!');
+					return false;
+				}
+				else if(password==""||password==null)
+				{
+					alert('Password: Field is Empty!');
+					return false;
+				}
+				else if(password.trim().length<8)
+				{
+					alert('Password: Minimum length is 8 characters.');
+					return false;
+				}
+				else if(password2!=password)
+				{
+					alert("Passwords don't match");
+					return false;
+				} 
+				else if(num==""||num==null)
+				{
+					alert('Phone Number: Field is Empty!');
+					return false;
+				}
+				else if(num.length<10)
+				{
+					alert('Phone Number: Invalid Phone Number entered. Enter 10 digit number.');
+					return false;
+				} 
+				else if(year==""||year==null)
+				{
+					alert('Year: Field is Empty!');
+					return false;
+				}
+				
+				if(add==""||add==null)
+				{
+					alert('Address: Field is Empty!');
+					return false;
+				}
+				else if(add.length>150)
+				{
+					alert('Address: Maximum 150 characters');
+					return false;
+				}
+				
+				if(email==""||email==null)
+				{
+					alert('Email: Field is Empty!');
+					return false;
+				}*/
+				return true;
+			}
+
+			function generator() 
+			{
+				var email = document.getElementById('email').value;
+				var username = email.split('@')[0];
+
+			    document.getElementById("myText").value = username;
+			}
+		</script>
+	</head>
+	<body>
+		<form onsubmit="return validate();" action="message.html">
+			Name: 
+			<br><input type="text" id="name" placeholder="Name" maxlength="10" size="30" /><br><br>
+			Age: 
+			<br><input type="text" id="age" placeholder="Age" size="30"/><br><br>
+			Password: 
+			<br><input type="password" id="password" placeholder="Password" maxlength="25"  size="30"/><br><br>
+			Re-enter Password: 
+			<br><input type="password" id="password2" placeholder="Confirm Password" maxlength="25" size="30"/><br><br>
+			Phone Number: 
+			<br><input type="text" id="num"	placeholder="Phone Number(10 Digits)" maxlength="10" size="30" /><br><br>
+			Year of Birth: 
+			<br><input type="text" id="year" placeholder="Year of Birth(4 Digits)" maxlength="4" size="30" /><br><br>
+			Address: <br>
+			<textarea id="add" rows="4" cols="29" placeholder="Only 150 characters allowed!"/></textarea><br><br>
+			State: <br>
+			<select id="state" name="state">
+		        <option value="karnataka">Karnataka</option>
+		        <option value="tamil nadu">Tamil Nadu</option>
+		        <option value="kerala">Kerala</option>
+		        <option value="ap">Andhra Pradesh</option>
+		    </select><br><br>
+
+		    Email: <br>
+		    <input type="email" id="email" placeholder="Enter valid email ID" size="30"/>
+		    <button onclick="generator()" type="button">Generate Username</button><br><br>
+		    
+		    UID: <br>
+		    <input type="text" id="myText" value="" readonly size="30"><br><br>
+			<button type="submit">Submit</button>
+			<button type="reset">Reset</button>
+		</form>
+
+	</body>
+</html>
