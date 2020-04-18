@@ -14,7 +14,7 @@
 				var add = document.getElementById('add').value;
 				var email = document.getElementById('email').value;
 
-				/*
+
 				if(name.trim()==""||name==null)
 				{
 					alert('Username Field is Empty!');
@@ -65,13 +65,18 @@
 					alert('Phone Number: Invalid Phone Number entered. Enter 10 digit number.');
 					return false;
 				} 
+				else if(isNaN(year))
+				{
+					alert('Year: Enter a Numeric Value!');
+					return false;
+				}
 				else if(year==""||year==null)
 				{
 					alert('Year: Field is Empty!');
 					return false;
 				}
 				
-				if(add==""||add==null)
+				else if(add==""||add==null)
 				{
 					alert('Address: Field is Empty!');
 					return false;
@@ -82,11 +87,11 @@
 					return false;
 				}
 				
-				if(email==""||email==null)
+				else if(email==""||email==null)
 				{
 					alert('Email: Field is Empty!');
 					return false;
-				}*/
+				}
 				return true;
 			}
 
